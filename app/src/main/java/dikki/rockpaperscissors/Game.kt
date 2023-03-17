@@ -14,7 +14,15 @@ object Game {
         "SCISSORS-PAPER" to true
     )
 
+    private val optionDrawable = mapOf(
+        "ROCK" to R.drawable.rock,
+        "PAPER" to R.drawable.paper,
+        "SCISSORS" to R.drawable.scissors
+    )
+
     fun pickRandomOption() : String = options[Random.nextInt(0,3 )]
+
+    fun pickOptionDrawable(option: String) : Int = optionDrawable[option]!!
 
     fun isWin(from: String, to: String) : Boolean = rules["$from-$to"]!!
 
