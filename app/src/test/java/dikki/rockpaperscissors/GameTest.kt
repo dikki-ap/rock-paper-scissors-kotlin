@@ -32,4 +32,16 @@ class GameTest {
         Assert.assertFalse(Game.isDraw("PAPER", "SCISSORS"))
         Assert.assertFalse(Game.isDraw("SCISSORS", "ROCK"))
     }
+
+    @Test
+    // Testing or IsWin
+    fun testIsWin() {
+        Assert.assertTrue(Game.isWin("ROCK", "SCISSORS"))
+        Assert.assertTrue(Game.isWin("SCISSORS", "PAPER"))
+        Assert.assertTrue(Game.isWin("PAPER", "ROCK"))
+
+        Assert.assertFalse(Game.isWin("ROCK", "PAPER"))
+        Assert.assertFalse(Game.isWin("SCISSORS", "ROCK"))
+        Assert.assertFalse(Game.isWin("PAPER", "SCISSORS"))
+    }
 }
