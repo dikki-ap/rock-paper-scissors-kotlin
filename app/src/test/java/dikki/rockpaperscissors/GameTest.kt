@@ -20,4 +20,16 @@ class GameTest {
         Assert.assertEquals(R.drawable.paper, Game.pickOptionDrawable("PAPER"))
         Assert.assertEquals(R.drawable.scissors, Game.pickOptionDrawable("SCISSORS"))
     }
+
+    @Test
+    // Testing for isDraw
+    fun testIsDraw() {
+        Assert.assertTrue(Game.isDraw("ROCK", "ROCK"))
+        Assert.assertTrue(Game.isDraw("PAPER", "PAPER"))
+        Assert.assertTrue(Game.isDraw("SCISSORS", "SCISSORS"))
+
+        Assert.assertFalse(Game.isDraw("ROCK", "PAPER"))
+        Assert.assertFalse(Game.isDraw("PAPER", "SCISSORS"))
+        Assert.assertFalse(Game.isDraw("SCISSORS", "ROCK"))
+    }
 }
